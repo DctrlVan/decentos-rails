@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rate: 9.99
+  time_sent: 2016-05-08 19:26:31
+  is_paid: false
+  fiat_amt: 9.99
+  recipient: 1
+  sender: 1
+
+two:
+  rate: 9.99
+  time_sent: 2016-05-08 19:26:31
+  is_paid: false
+  fiat_amt: 9.99
+  recipient: 1
+  sender: 1

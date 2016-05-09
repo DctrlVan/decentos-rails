@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @bitcoin_addr.address %>
+</p>
+
+<p>
+  <strong>Invoice:</strong>
+  <%= @bitcoin_addr.invoice_id %>
+</p>
+
+<p>
+  <strong>Is used:</strong>
+  <%= @bitcoin_addr.is_used %>
+</p>
+
+<%= link_to 'Edit', edit_bitcoin_addr_path(@bitcoin_addr) %> |
+<%= link_to 'Back', bitcoin_addrs_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bitcoin Addrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Invoice</th>
+      <th>Is used</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bitcoin_addrs.each do |bitcoin_addr| %>
+      <tr>
+        <td><%= bitcoin_addr.address %></td>
+        <td><%= bitcoin_addr.invoice_id %></td>
+        <td><%= bitcoin_addr.is_used %></td>
+        <td><%= link_to 'Show', bitcoin_addr %></td>
+        <td><%= link_to 'Edit', edit_bitcoin_addr_path(bitcoin_addr) %></td>
+        <td><%= link_to 'Destroy', bitcoin_addr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bitcoin addr', new_bitcoin_addr_path %>

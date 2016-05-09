@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @invoice.rate %>
+</p>
+
+<p>
+  <strong>Time sent:</strong>
+  <%= @invoice.time_sent %>
+</p>
+
+<p>
+  <strong>Is paid:</strong>
+  <%= @invoice.is_paid %>
+</p>
+
+<p>
+  <strong>Fiat amt:</strong>
+  <%= @invoice.fiat_amt %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @invoice.recipient %>
+</p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @invoice.sender %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>
