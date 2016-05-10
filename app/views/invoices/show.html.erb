@@ -30,5 +30,15 @@
   <%= @invoice.sender %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= @invoice.user_id %>
+</p>
+
+<p>
+  <strong>Issuer:</strong>
+  <%= @invoice.issuer_id %>
+</p>
+
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> |
 <%= link_to 'Back', invoices_path %>

@@ -44,6 +44,28 @@
   <strong>Invited by:</strong>
   <%= @user.invited_by %>
 </p>
+<table>
+  <thead>
+    <tr>
+      <th>Created at</th>
+      <th>Rate</th>
+      <th>Fiat amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.invoices.each do |invoice| %>
+      <tr>
+        <td><%= invoice.created_at %></td>
+        <td><%= invoice.rate %></td>
+        <td><%= invoice.fiat_amt %></td>
+        <td><%= link_to 'Show', invoice %></td>
+        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
+        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
