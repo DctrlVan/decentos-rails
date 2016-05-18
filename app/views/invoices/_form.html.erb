@@ -36,8 +36,7 @@
     <%= f.number_field :sender %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.collection_select(:user_id, User.all, :id, :full_name) %>
   </div>
   <div class="field">
     <%= f.label :issuer_id %><br>
