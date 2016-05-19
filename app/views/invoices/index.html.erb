@@ -18,7 +18,7 @@
   </thead>
 
   <tbody>
-    <% @invoices.each do |invoice| %>
+    <% @user.invoices.each do |invoice| %>
       <tr>
         <td><%= invoice.rate %></td>
         <td><%= invoice.time_sent %></td>
@@ -28,9 +28,9 @@
         <td><%= invoice.sender %></td>
         <td><%= invoice.user_id %></td>
         <td><%= invoice.issuer_id %></td>
-        <td><%= link_to 'Show', invoice %></td>
-        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_invoice_path(@user, invoice) %></td>
+        <td><%= link_to 'Edit', edit_user_invoice_path(@user, invoice) %></td>
+        <td><%= link_to 'Destroy', user_invoice_path(@user, invoice), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Invoice', new_invoice_path %>
+<%= link_to 'New Invoice', new_user_invoice_path(@user) %>
