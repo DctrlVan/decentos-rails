@@ -30,8 +30,10 @@ class InvoicesController < ApplicationController
 
     respond_to do |format|
       if @invoice.save
-        format.html { redirect_to user_invoices_path(@user, @invoice), notice: 'Invoice was successfully created.' }
-        format.json { render :show, status: :created, location: user_invoices_path(@user, @invoice) }
+        format.html { redirect_to user_invoices_path(@user, @invoice),
+                      notice: 'Invoice was successfully created.' }
+        format.json { render :show, status: :created,
+                      location: user_invoices_path(@user, @invoice) }
       else
         format.html { render :new }
         format.json { render json: @invoice.errors, status: :unprocessable_entity }
@@ -45,7 +47,8 @@ class InvoicesController < ApplicationController
     @invoice = @user.invoices.find(params[:id])
     respond_to do |format|
       if @invoice.update(invoice_params)
-        format.html { redirect_to([@user, @invoice], notice: 'Invoice was successfully updated.') }
+        format.html { redirect_to([@user, @invoice],
+                                  notice: 'Invoice was successfully updated.') }
         format.json { render :show, status: :ok, location: @invoice }
       else
         format.html { render :edit }
@@ -60,7 +63,8 @@ class InvoicesController < ApplicationController
     @invoice = @user.invoices.find(params[:id])
     @invoice.destroy
     respond_to do |format|
-      format.html { redirect_to user_invoices_url(@user), notice: 'Invoice was successfully destroyed.' }
+      format.html { redirect_to user_invoices_url(@user),
+                    notice: 'Invoice was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
