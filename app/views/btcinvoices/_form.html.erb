@@ -1,10 +1,10 @@
-<%= form_for([@user, @invoice]) do |f| %>
-  <% if @invoice.errors.any? %>
+<%= form_for([@user, @btcinvoice]) do |f| %>
+  <% if @btcinvoice.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+      <h2><%= pluralize(@btcinvoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
 
       <ul>
-      <% @invoice.errors.full_messages.each do |message| %>
+      <% @btcinvoice.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

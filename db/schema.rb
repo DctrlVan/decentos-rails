@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509215807) do
+ActiveRecord::Schema.define(version: 20160523213518) do
 
   create_table "bitcoin_addrs", force: :cascade do |t|
     t.string   "address"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20160509215807) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "invoices", force: :cascade do |t|
+  create_table "btcinvoices", force: :cascade do |t|
     t.decimal  "rate",       precision: 9,  scale: 5
     t.datetime "time_sent"
     t.boolean  "is_paid"
@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 20160509215807) do
     t.integer  "issuer_id"
   end
 
-  add_index "invoices", ["issuer_id"], name: "index_invoices_on_issuer_id"
-  add_index "invoices", ["user_id"], name: "index_invoices_on_user_id"
+  add_index "btcinvoices", ["issuer_id"], name: "index_btcinvoices_on_issuer_id"
+  add_index "btcinvoices", ["user_id"], name: "index_btcinvoices_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

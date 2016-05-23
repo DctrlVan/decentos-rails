@@ -1,42 +1,42 @@
-class InvoicesController < ApplicationController
+class BtcinvoicesController < ApplicationController
   before_action :set_user
 
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = @user.invoices.all
+    @btcinvoices = @user.btcinvoices.all
   end
 
   # GET /invoices/1
   # GET /invoices/1.json
   def show
-    @invoice = @user.invoices.find(params[:id])
+    @btcinvoice = @user.btcinvoices.find(params[:id])
   end
 
   # GET /invoices/new
   def new
-    @invoice = @user.invoices.new
+    @btcinvoice = @user.btcinvoices.new
   end
 
   # GET /invoices/1/edit
   def edit
-    @invoice = @user.invoices.find(params[:id])
+    @btcinvoice = @user.btcinvoices.find(params[:id])
   end
 
   # POST /invoices
   # POST /invoices.json
   def create
-    @invoice = @user.invoices.new(invoice_params)
+    @btcinvoice = @user.btcinvoices.new(btcinvoice_params)
 
     respond_to do |format|
-      if @invoice.save
-        format.html { redirect_to user_invoices_path(@user, @invoice),
+      if @btcinvoice.save
+        format.html { redirect_to user_btcinvoices_path(@user, @btcinvoice),
                       notice: 'Invoice was successfully created.' }
         format.json { render :show, status: :created,
-                      location: user_invoices_path(@user, @invoice) }
+                      location: user_btcinvoices_path(@user, @btcinvoice) }
       else
         format.html { render :new }
-        format.json { render json: @invoice.errors, status: :unprocessable_entity }
+        format.json { render json: @btcinvoice.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -44,15 +44,15 @@ class InvoicesController < ApplicationController
   # PATCH/PUT /invoices/1
   # PATCH/PUT /invoices/1.json
   def update
-    @invoice = @user.invoices.find(params[:id])
+    @btcinvoice = @user.btcinvoices.find(params[:id])
     respond_to do |format|
-      if @invoice.update(invoice_params)
-        format.html { redirect_to([@user, @invoice],
+      if @btcinvoice.update(btcinvoice_params)
+        format.html { redirect_to([@user, @btcinvoice],
                                   notice: 'Invoice was successfully updated.') }
-        format.json { render :show, status: :ok, location: @invoice }
+        format.json { render :show, status: :ok, location: @btcinvoice }
       else
         format.html { render :edit }
-        format.json { render json: @invoice.errors, status: :unprocessable_entity }
+        format.json { render json: @btcinvoice.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,10 +60,10 @@ class InvoicesController < ApplicationController
   # DELETE /invoices/1
   # DELETE /invoices/1.json
   def destroy
-    @invoice = @user.invoices.find(params[:id])
-    @invoice.destroy
+    @btcinvoice = @user.btcinvoices.find(params[:id])
+    @btcinvoice.destroy
     respond_to do |format|
-      format.html { redirect_to user_invoices_url(@user),
+      format.html { redirect_to user_btcinvoices_url(@user),
                     notice: 'Invoice was successfully destroyed.' }
       format.json { head :no_content }
     end
@@ -76,7 +76,7 @@ class InvoicesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def invoice_params
-      params.require(:invoice).permit(:rate, :time_sent, :is_paid, :fiat_amt, :recipient, :sender, :user_id, :issuer_id)
+    def btcinvoice_params
+      params.require(:btcinvoice).permit(:rate, :time_sent, :is_paid, :fiat_amt, :recipient, :sender, :user_id, :issuer_id)
     end
 end

@@ -16,7 +16,7 @@
     <% @bitcoin_addrs.each do |bitcoin_addr| %>
       <tr>
         <td><%= bitcoin_addr.address %></td>
-        <td><%= bitcoin_addr.invoice_id %></td>
+        <td><%= bitcoin_addr.btcinvoice_id %></td>
         <td><%= bitcoin_addr.is_used %></td>
         <td><%= link_to 'Show', bitcoin_addr %></td>
         <td><%= link_to 'Edit', edit_bitcoin_addr_path(bitcoin_addr) %></td>

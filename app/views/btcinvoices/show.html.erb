@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @btcinvoice.rate %>
+</p>
+
+<p>
+  <strong>Time sent:</strong>
+  <%= @btcinvoice.time_sent %>
+</p>
+
+<p>
+  <strong>Is paid:</strong>
+  <%= @btcinvoice.is_paid %>
+</p>
+
+<p>
+  <strong>Fiat amt:</strong>
+  <%= @btcinvoice.fiat_amt %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @btcinvoice.recipient %>
+</p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @btcinvoice.sender %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@btcinvoice.user_id).full_name %>
+</p>
+
+<p>
+  <strong>Issuer:</strong>
+  <%= @btcinvoice.issuer_id %>
+</p>
+
+<%= link_to 'Edit', edit_user_btcinvoice_path(@user, @btcinvoice) %> |
+<%= link_to 'Back', user_btcinvoices_path(@user) %>

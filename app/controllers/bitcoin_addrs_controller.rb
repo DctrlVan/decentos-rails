@@ -69,6 +69,6 @@ class BitcoinAddrsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bitcoin_addr_params
-      params.require(:bitcoin_addr).permit(:address, :invoice_id, :is_used)
+      params.require(:bitcoin_addr).permit(:address, :btcinvoice_id, :is_used)
     end
 end
