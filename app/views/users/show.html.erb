@@ -50,8 +50,7 @@
   <%= @user.invited_by %>
 </p>
 <p>
-  <strong>Invoices</strong>
-  <%= link_to 'Index', user_btcinvoices_path(@user) %>
+  <strong><%= link_to 'Invoices', user_btcinvoices_path(@user) %></strong>
 </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
