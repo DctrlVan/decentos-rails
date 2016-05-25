@@ -28,14 +28,6 @@
     <%= f.text_field :fiat_amt %>
   </div>
   <div class="field">
-    <%= f.label :recipient %><br>
-    <%= f.number_field :recipient %>
-  </div>
-  <div class="field">
-    <%= f.label :sender %><br>
-    <%= f.number_field :sender %>
-  </div>
-  <div class="field">
     <%= f.collection_select(:user_id, User.all, :id, :full_name) %>
   </div>
   <div class="field">
