@@ -23,7 +23,7 @@
         <td><%= invoice.is_paid %></td>
         <td><%= invoice.fiat_amt %></td>
         <td><%= invoice.user_id %></td>
-        <td><%= invoice.issuer_id %></td>
+        <td><%= User.find(invoice.issuer_id).full_name if invoice.issuer_id %></td>
         <td><%= link_to 'Show', user_btcinvoice_path(@user, invoice) %></td>
         <td><%= link_to 'Edit', edit_user_btcinvoice_path(@user, invoice) %></td>
         <td><%= link_to 'Destroy', user_btcinvoice_path(@user, invoice), method: :delete, data: { confirm: 'Are you sure?' } %></td>
