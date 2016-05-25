@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523213518) do
+ActiveRecord::Schema.define(version: 20160525202514) do
 
   create_table "bitcoin_addrs", force: :cascade do |t|
     t.string   "address"
@@ -26,8 +26,6 @@ ActiveRecord::Schema.define(version: 20160523213518) do
     t.datetime "time_sent"
     t.boolean  "is_paid"
     t.decimal  "fiat_amt",   precision: 10, scale: 2
-    t.integer  "recipient"
-    t.integer  "sender"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "user_id"
@@ -50,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160523213518) do
     t.integer  "invited_by"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.integer  "invoicepref"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

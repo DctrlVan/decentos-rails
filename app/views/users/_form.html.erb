@@ -44,6 +44,10 @@
     <%= f.check_box :is_admin %>
   </div>
   <div class="field">
+    <%= f.label "Invoice pref" %><br>
+    <%= f.select(:invoicepref, User.invoiceprefs.keys.map {|invoicepref| [invoicepref.titleize, invoicepref]}) %>
+  </div>
+  <div class="field">
     <%= f.label :last_sign_in %><br>
     <%= f.datetime_select :last_sign_in %>
   </div>
