@@ -22,16 +22,6 @@
 
 <p>
   <strong>Recipient:</strong>
-  <%= @btcinvoice.recipient %>
-</p>
-
-<p>
-  <strong>Sender:</strong>
-  <%= @btcinvoice.sender %>
-</p>
-
-<p>
-  <strong>User:</strong>
   <%= User.find(@btcinvoice.user_id).full_name %>
 </p>
 

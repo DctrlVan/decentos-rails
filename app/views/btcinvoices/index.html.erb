@@ -10,8 +10,6 @@
       <th>Is paid</th>
       <th>Fiat amt</th>
       <th>Recipient</th>
-      <th>Sender</th>
-      <th>User</th>
       <th>Issuer</th>
       <th colspan="3"></th>
     </tr>
@@ -24,8 +22,6 @@
         <td><%= invoice.time_sent %></td>
         <td><%= invoice.is_paid %></td>
         <td><%= invoice.fiat_amt %></td>
-        <td><%= invoice.recipient %></td>
-        <td><%= invoice.sender %></td>
         <td><%= invoice.user_id %></td>
         <td><%= invoice.issuer_id %></td>
         <td><%= link_to 'Show', user_btcinvoice_path(@user, invoice) %></td>

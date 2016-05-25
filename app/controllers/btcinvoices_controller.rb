@@ -77,6 +77,6 @@ class BtcinvoicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def btcinvoice_params
-      params.require(:btcinvoice).permit(:rate, :time_sent, :is_paid, :fiat_amt, :recipient, :sender, :user_id, :issuer_id)
+      params.require(:btcinvoice).permit(:rate, :time_sent, :is_paid, :fiat_amt, :user_id, :issuer_id)
     end
 end
