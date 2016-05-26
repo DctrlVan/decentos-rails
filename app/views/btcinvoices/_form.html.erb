@@ -28,11 +28,12 @@
     <%= f.text_field :fiat_amt %>
   </div>
   <div class="field">
-    <%= f.collection_select(:user_id, User.all, :id, :full_name) %>
+    <%= f.label :issuer_id %><br>
+    <%= f.collection_select(:issuer_id, User.all, :id, :full_name) %>
   </div>
   <div class="field">
-    <%= f.label :issuer_id %><br>
-    <%= f.number_field :issuer_id %>
+    <%= f.label(:user_id, "Recipient") %><br>
+    <%= f.collection_select(:user_id, User.all, :id, :full_name) %>
   </div>
   <div class="actions">
     <%= f.submit %>

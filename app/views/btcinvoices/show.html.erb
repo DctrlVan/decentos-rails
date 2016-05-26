@@ -22,12 +22,12 @@
 
 <p>
   <strong>Recipient:</strong>
-  <%= User.find(@btcinvoice.user_id).full_name %>
+  <%= User.find(@btcinvoice.user_id).full_name if @btcinvoice.user_id %>
 </p>
 
 <p>
   <strong>Issuer:</strong>
-  <%= @btcinvoice.issuer_id %>
+  <%= User.find(@btcinvoice.issuer_id).full_name if @btcinvoice.issuer_id %>
 </p>
 
 <%= link_to 'Edit', edit_user_btcinvoice_path(@user, @btcinvoice) %> |
