@@ -4,7 +4,6 @@ one:
   first_name: MyString
   last_name: MyString
   email: MyString
-  birthdate: 2016-05-08
   active: false
   password_digest: <%= BCrypt::Password.create('secret') %>
   is_admin: false
@@ -16,7 +15,6 @@ two:
   first_name: MyString
   last_name: MyString
   email: MyString
-  birthdate: 2016-05-08
   active: false
   password_digest: <%= BCrypt::Password.create('secret') %>
   is_admin: false

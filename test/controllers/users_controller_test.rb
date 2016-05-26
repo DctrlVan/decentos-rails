@@ -18,7 +18,16 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     assert_difference('User.count') do
-      post :create, user: { active: @user.active, birthdate: @user.birthdate, current_session_start: @user.current_session_start, email: @user.email, first_name: @user.first_name, invited_by: @user.invited_by, is_admin: @user.is_admin, last_name: @user.last_name, last_sign_in: @user.last_sign_in, password: 'secret', password_confirmation: 'secret' }
+      post :create, user: { active: @user.active,
+                            current_session_start: @user.current_session_start,
+                            email: @user.email,
+                            first_name: @user.first_name,
+                            invited_by: @user.invited_by,
+                            is_admin: @user.is_admin,
+                            last_name: @user.last_name,
+                            last_sign_in: @user.last_sign_in,
+                            password: 'secret',
+                            password_confirmation: 'secret' }
     end
 
     assert_redirected_to user_path(assigns(:user))
@@ -35,7 +44,16 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
-    patch :update, id: @user, user: { active: @user.active, birthdate: @user.birthdate, current_session_start: @user.current_session_start, email: @user.email, first_name: @user.first_name, invited_by: @user.invited_by, is_admin: @user.is_admin, last_name: @user.last_name, last_sign_in: @user.last_sign_in, password: 'secret', password_confirmation: 'secret' }
+    patch :update, id: @user, user: { active: @user.active,
+                              current_session_start: @user.current_session_start,
+                              email: @user.email,
+                              first_name: @user.first_name,
+                              invited_by: @user.invited_by,
+                              is_admin: @user.is_admin,
+                              last_name: @user.last_name,
+                              last_sign_in: @user.last_sign_in,
+                              password: 'secret',
+                              password_confirmation: 'secret' }
     assert_redirected_to user_path(assigns(:user))
   end
 

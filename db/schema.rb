@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525202514) do
+ActiveRecord::Schema.define(version: 20160526204911) do
 
   create_table "bitcoin_addrs", force: :cascade do |t|
     t.string   "address"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 20160525202514) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.date     "birthdate"
     t.boolean  "active"
     t.string   "password_digest"
     t.boolean  "is_admin"
