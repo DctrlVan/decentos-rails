@@ -1,3 +1,3 @@
 class BitcoinAddr < ActiveRecord::Base
-  has_one :btcinvoice
+  belongs_to :btcinvoice
 end
