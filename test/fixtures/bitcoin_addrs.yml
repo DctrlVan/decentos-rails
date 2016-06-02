@@ -2,10 +2,10 @@
 
 one:
   address: MyString
-  invoice_id: 1
+  btcinvoice_id: 1
   is_used: false
 
 two:
   address: MyString
-  invoice_id: 1
+  btcinvoice_id: 1
   is_used: false

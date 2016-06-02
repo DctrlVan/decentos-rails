@@ -30,5 +30,8 @@
   <%= User.find(@btcinvoice.issuer_id).full_name if @btcinvoice.issuer_id %>
 </p>
 
-<%= link_to 'Edit', edit_user_btcinvoice_path(@user, @btcinvoice) %> |
-<%= link_to 'Back', user_btcinvoices_path(@user) %>
+<p>
+  <strong><%= link_to 'Bitcoin Addresses', btcinvoice_bitcoin_addrs_path(@btcinvoice) %></strong>
+</p>
+
+<%= link_to 'Edit', edit_btcinvoice_path(@btcinvoice) %>

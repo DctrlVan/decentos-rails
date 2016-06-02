@@ -1,5 +1,5 @@
 class BtcinvoicesController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:index, :create]
 
   # GET /invoices
   # GET /invoices.json
@@ -10,7 +10,7 @@ class BtcinvoicesController < ApplicationController
   # GET /invoices/1
   # GET /invoices/1.json
   def show
-    @btcinvoice = @user.btcinvoices.find(params[:id])
+    @btcinvoice = Btcinvoice.find(params[:id])
   end
 
   # GET /invoices/new
@@ -20,7 +20,7 @@ class BtcinvoicesController < ApplicationController
 
   # GET /invoices/1/edit
   def edit
-    @btcinvoice = @user.btcinvoices.find(params[:id])
+    @btcinvoice = Btcinvoice.find(params[:id])
   end
 
   # POST /invoices

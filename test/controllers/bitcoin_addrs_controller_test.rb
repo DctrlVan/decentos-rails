@@ -18,7 +18,7 @@ class BitcoinAddrsControllerTest < ActionController::TestCase
 
   test "should create bitcoin_addr" do
     assert_difference('BitcoinAddr.count') do
-      post :create, bitcoin_addr: { address: @bitcoin_addr.address, invoice_id: @bitcoin_addr.invoice_id, is_used: @bitcoin_addr.is_used }
+      post :create, bitcoin_addr: { address: @bitcoin_addr.address, btcinvoice_id: @bitcoin_addr.btcinvoice_id, is_used: @bitcoin_addr.is_used }
     end
 
     assert_redirected_to bitcoin_addr_path(assigns(:bitcoin_addr))
@@ -35,7 +35,7 @@ class BitcoinAddrsControllerTest < ActionController::TestCase
   end
 
   test "should update bitcoin_addr" do
-    patch :update, id: @bitcoin_addr, bitcoin_addr: { address: @bitcoin_addr.address, invoice_id: @bitcoin_addr.invoice_id, is_used: @bitcoin_addr.is_used }
+    patch :update, id: @bitcoin_addr, bitcoin_addr: { address: @bitcoin_addr.address, btcinvoice_id: @bitcoin_addr.btcinvoice_id, is_used: @bitcoin_addr.is_used }
     assert_redirected_to bitcoin_addr_path(assigns(:bitcoin_addr))
   end
 

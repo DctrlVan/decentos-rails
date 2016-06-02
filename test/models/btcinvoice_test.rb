@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class InvoiceTest < ActiveSupport::TestCase
+class BtcinvoiceTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,15 +1,16 @@
 class BitcoinAddrsController < ApplicationController
-  before_action :set_bitcoin_addr, only: [:show, :edit, :update, :destroy]
+  before_action :set_btcinvoice, only: [:index, :new, :create]
 
   # GET /bitcoin_addrs
   # GET /bitcoin_addrs.json
   def index
-    @bitcoin_addrs = BitcoinAddr.all
+    @bitcoin_addrs = @btcinvoice.bitcoin_addrs
   end
 
   # GET /bitcoin_addrs/1
   # GET /bitcoin_addrs/1.json
   def show
+    @bitcoin_addr = BitcoinAddr.find(params[:id])
   end
 
   # GET /bitcoin_addrs/new
@@ -63,8 +64,8 @@ class BitcoinAddrsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_bitcoin_addr
-      @bitcoin_addr = BitcoinAddr.find(params[:id])
+    def set_btcinvoice
+      @btcinvoice = Btcinvoice.find(params[:btcinvoice_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

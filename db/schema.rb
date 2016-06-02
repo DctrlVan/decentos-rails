@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526204911) do
+ActiveRecord::Schema.define(version: 20160527063957) do
 
   create_table "bitcoin_addrs", force: :cascade do |t|
     t.string   "address"
-    t.integer  "invoice_id"
+    t.integer  "btcinvoice_id"
     t.boolean  "is_used"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "btcinvoices", force: :cascade do |t|

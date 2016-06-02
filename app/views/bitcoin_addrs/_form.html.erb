@@ -1,4 +1,4 @@
-<%= form_for(@bitcoin_addr) do |f| %>
+<%= form_for([@btcinvoice, @bitcoin_addr]) do |f| %>
   <% if @bitcoin_addr.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bitcoin_addr.errors.count, "error") %> prohibited this bitcoin_addr from being saved:</h2>

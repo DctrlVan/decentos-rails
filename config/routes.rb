@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :bitcoin_addrs
   resources :users do
-    resources :btcinvoices
+    resources :btcinvoices, shallow: true do
+      resources :bitcoin_addrs
+    end
   end
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
