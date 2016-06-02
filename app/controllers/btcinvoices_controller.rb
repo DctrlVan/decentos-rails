@@ -1,5 +1,5 @@
 class BtcinvoicesController < ApplicationController
-  before_action :set_user, only: [:index, :create]
+  before_action :set_user, only: [:index, :new, :create]
 
   # GET /invoices
   # GET /invoices.json
