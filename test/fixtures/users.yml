@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  active: false
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  is_admin: false
+  last_sign_in: 2016-05-08 17:49:44
+  current_session_start: 2016-05-08 17:49:44
+  invited_by: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  active: false
+  password_digest: <%= BCrypt::Password.create('secret') %>
+  is_admin: false
+  last_sign_in: 2016-05-08 17:49:44
+  current_session_start: 2016-05-08 17:49:44
+  invited_by: 1

@@ -1,0 +1,41 @@
+<%= form_for([@user, @btcinvoice]) do |f| %>
+  <% if @btcinvoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@btcinvoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+      <% @btcinvoice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rate %><br>
+    <%= f.text_field :rate %>
+  </div>
+  <div class="field">
+    <%= f.label :time_sent %><br>
+    <%= f.datetime_select :time_sent %>
+  </div>
+  <div class="field">
+    <%= f.label :is_paid %><br>
+    <%= f.check_box :is_paid %>
+  </div>
+  <div class="field">
+    <%= f.label :fiat_amt %><br>
+    <%= f.text_field :fiat_amt %>
+  </div>
+  <div class="field">
+    <%= f.label :issuer_id %><br>
+    <%= f.collection_select(:issuer_id, User.all, :id, :full_name) %>
+  </div>
+  <div class="field">
+    <%= f.label(:user_id, "Recipient") %><br>
+    <%= f.collection_select(:user_id, User.all, :id, :full_name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

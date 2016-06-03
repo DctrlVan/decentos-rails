@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @btcinvoice.rate %>
+</p>
+
+<p>
+  <strong>Time sent:</strong>
+  <%= @btcinvoice.time_sent %>
+</p>
+
+<p>
+  <strong>Is paid:</strong>
+  <%= @btcinvoice.is_paid %>
+</p>
+
+<p>
+  <strong>Fiat amt:</strong>
+  <%= @btcinvoice.fiat_amt %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= User.find(@btcinvoice.user_id).full_name if @btcinvoice.user_id %>
+</p>
+
+<p>
+  <strong>Issuer:</strong>
+  <%= User.find(@btcinvoice.issuer_id).full_name if @btcinvoice.issuer_id %>
+</p>
+
+<p>
+  <strong><%= link_to 'Bitcoin Addresses', btcinvoice_bitcoin_addrs_path(@btcinvoice) %></strong>
+</p>
+
+<%= link_to 'Edit', edit_btcinvoice_path(@btcinvoice) %>

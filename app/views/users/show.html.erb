@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @user.active %>
+</p>
+
+<p>
+  <strong>Is admin:</strong>
+  <%= @user.is_admin %>
+</p>
+
+<p>
+  <strong>Invoice pref:</strong>
+  <%= @user.invoicepref %>
+</p>
+
+<p>
+  <strong>Last sign in:</strong>
+  <%= @user.last_sign_in %>
+</p>
+
+<p>
+  <strong>Current session start:</strong>
+  <%= @user.current_session_start %>
+</p>
+
+<p>
+  <strong>Invited by:</strong>
+  <%= @user.invited_by %>
+</p>
+<p>
+  <strong><%= link_to 'Invoices', user_btcinvoices_path(@user) %></strong>
+</p>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

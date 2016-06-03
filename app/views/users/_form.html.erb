@@ -1,0 +1,61 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br>
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :is_admin %><br>
+    <%= f.check_box :is_admin %>
+  </div>
+  <div class="field">
+    <%= f.label "Invoice pref" %><br>
+    <%= f.select(:invoicepref, User.invoiceprefs.keys.map {|invoicepref| [invoicepref.titleize, invoicepref]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :last_sign_in %><br>
+    <%= f.datetime_select :last_sign_in %>
+  </div>
+  <div class="field">
+    <%= f.label :current_session_start %><br>
+    <%= f.datetime_select :current_session_start %>
+  </div>
+  <div class="field">
+    <%= f.label :invited_by %><br>
+    <%= f.number_field :invited_by %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

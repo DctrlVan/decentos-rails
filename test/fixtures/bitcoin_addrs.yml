@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  btcinvoice_id: 1
+  is_used: false
+
+two:
+  address: MyString
+  btcinvoice_id: 1
+  is_used: false

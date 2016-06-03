@@ -1,0 +1,2 @@
+module BitcoinAddrsHelper
+end
