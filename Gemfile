@@ -28,7 +28,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'active_admin_theme'
+gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
