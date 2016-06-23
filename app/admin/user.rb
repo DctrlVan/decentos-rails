@@ -7,13 +7,6 @@ permit_params :first_name,
               :last_name,
               :email,
               :active,
-              :password_digest,
-              :is_admin,
-              :last_sign_in,
-              :current_session_start,
-              :invited_by,
-              :created_at,
-              :updated_at,
               :invoicepref
 
 #
@@ -24,6 +17,17 @@ permit_params :first_name,
 #   permitted << :other if resource.something?
 #   permitted
 # end
-
+form do |f|
+  f.semantic_errors
+  f.inputs do
+    f.input :first_name
+    f.input :last_name
+    f.input :email
+    f.input :active
+    f.input :invoicepref, as: :select,
+      collection: User.invoiceprefs.keys.map {|invoicepref| [invoicepref.titleize, invoicepref]}
+  end
+  f.actions
+end
 
 end
