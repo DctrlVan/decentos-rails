@@ -17,6 +17,11 @@ permit_params :first_name,
 #   permitted << :other if resource.something?
 #   permitted
 # end
+
+sidebar 'Invoices', only: [:show, :edit] do
+  link_to "Invoices", admin_user_btcinvoices_path(user)
+end
+
 form do |f|
   f.semantic_errors
   f.inputs do

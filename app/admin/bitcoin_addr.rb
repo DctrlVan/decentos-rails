@@ -12,6 +12,6 @@ ActiveAdmin.register BitcoinAddr do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-
+belongs_to :btcinvoice
 
 end
